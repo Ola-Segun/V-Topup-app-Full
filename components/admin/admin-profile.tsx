@@ -28,6 +28,7 @@ import {
 } from "lucide-react"
 import { format } from "date-fns"
 import { motion } from "framer-motion"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 const adminStats = [
   {
@@ -530,19 +531,10 @@ export function AdminProfile() {
               <CardTitle>Interface Preferences</CardTitle>
               <CardDescription>Customize your admin interface</CardDescription>
             </CardHeader>
-            <CardContent className="space-y-4">
-              <div className="space-y-2">
+            <CardContent className="space-y-4 w-full">
+              <div className="space-x-2 flex w-full justify-between">
                 <Label>Theme</Label>
-                <Select defaultValue="system">
-                  <SelectTrigger>
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="light">Light</SelectItem>
-                    <SelectItem value="dark">Dark</SelectItem>
-                    <SelectItem value="system">System</SelectItem>
-                  </SelectContent>
-                </Select>
+                <ThemeToggle />
               </div>
 
               <div className="space-y-2">

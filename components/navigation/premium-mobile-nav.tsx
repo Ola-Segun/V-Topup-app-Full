@@ -211,7 +211,7 @@ export function PremiumMobileNav() {
 
             <div className="flex items-center space-x-2">
               <NotificationCenter />
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
             </div>
           </div>
         </div>

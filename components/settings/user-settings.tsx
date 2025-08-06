@@ -34,7 +34,7 @@ import {
 import { useAuth } from "@/components/auth-provider"
 import { saveRecentAction } from "@/lib/recent-actions"
 import { PremiumMobileNav } from "@/components/navigation/premium-mobile-nav"
-
+import { ThemeToggle } from "../theme-toggle"
 
 export function UserSettings() {
   const { user } = useAuth()
@@ -685,35 +685,11 @@ export function UserSettings() {
                     <CardTitle>App Preferences</CardTitle>
                     <CardDescription>Customize your app experience</CardDescription>
                   </CardHeader>
-                  <CardContent className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="space-y-2">
+                  <CardContent className="space-y-6 w-full">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+                      <div className="space-x-2 flex w-full justify-between">
                         <Label>Theme</Label>
-                        <Select value={preferences.theme} onValueChange={(value) => handlePreferenceChange("theme", value)}>
-                          <SelectTrigger>
-                            <SelectValue />
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="light">
-                              <div className="flex items-center space-x-2">
-                                <Sun className="w-4 h-4" />
-                                <span>Light</span>
-                              </div>
-                            </SelectItem>
-                            <SelectItem value="dark">
-                              <div className="flex items-center space-x-2">
-                                <Moon className="w-4 h-4" />
-                                <span>Dark</span>
-                              </div>
-                            </SelectItem>
-                            <SelectItem value="system">
-                              <div className="flex items-center space-x-2">
-                                <Settings className="w-4 h-4" />
-                                <span>System</span>
-                              </div>
-                            </SelectItem>
-                          </SelectContent>
-                        </Select>
+                        <ThemeToggle />
                       </div>
 
                       <div className="space-y-2">
